@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment and Emotion Analysis</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Text Analysis</h2>
+
+        <!-- Form for input -->
+        <form method="POST">
+            <textarea id="inputText" name="inputText" rows="5" placeholder="Enter text for analysis..."></textarea><br>
+            
+            <!-- Buttons for selecting analysis type -->
+            <button type="submit" name="analysis_type" value="sentiment">Sentiment Analysis</button>
+            <button type="submit" name="analysis_type" value="emotion">Emotion Detection</button>
+        </form>
+
+        <div class="result" id="resultContainer">
+            {% if result %}
+                <div class="result-content">
+                    {{ result|safe }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
